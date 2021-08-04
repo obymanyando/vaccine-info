@@ -1,3 +1,4 @@
+import React from 'react'
 import { useMemo } from 'react'
 import { useTable, useSortBy } from 'react-table'
 import VACCINATION_DATA from '../data/vaccinations.json'
@@ -24,7 +25,7 @@ export const SortingTable = () => {
 	)
 
 	return (
-		<>
+		<div>
 			<h3>Current Vaccination status</h3>
 			<table {...getTableProps()}>
 				<thead>
@@ -79,6 +80,6 @@ export const SortingTable = () => {
 					))}
 				</tfoot>
 			</table>
-		</>
+		</div>
 	)
 }

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useTable } from 'react-table'
 import VACCINATION_DATA from '../data/vaccinations.json'
 import { COLUMNS } from './columns'
@@ -22,7 +22,7 @@ export const VaccinationsTable = () => {
 	})
 
 	return (
-		<>
+		<div>
 			<h3>Current Vaccination status</h3>
 			<table {...getTableProps()}>
 				<thead>
@@ -56,6 +56,6 @@ export const VaccinationsTable = () => {
 					))}
 				</tfoot>
 			</table>
-		</>
+		</div>
 	)
 }

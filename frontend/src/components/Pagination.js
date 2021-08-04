@@ -1,3 +1,4 @@
+import React from 'react'
 import { useMemo } from 'react'
 import { useTable, usePagination } from 'react-table'
 import VACCINATION_DATA from '../data/vaccinations.json'
@@ -35,7 +36,7 @@ export const Pagination = () => {
 
 	const { pageIndex, pageSize } = state
 	return (
-		<>
+		<div>
 			<h3>Current Vaccination status</h3>
 			<table {...getTableProps()}>
 				<thead>
@@ -103,6 +104,6 @@ export const Pagination = () => {
 					{'>>'}
 				</button>
 			</div>
-		</>
+		</div>
 	)
 }

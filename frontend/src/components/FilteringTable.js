@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useTable, useGlobalFilter, useFilters } from 'react-table'
 import VACCINATION_DATA from '../data/vaccinations.json'
 import { ColumnFilter } from './ColumnFilter'
@@ -35,7 +35,7 @@ export const FilteringTable = () => {
 	const { globalFilter } = state
 
 	return (
-		<>
+		<div>
 			<h3>Current Vaccination status</h3>
 			<GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
 			<table {...getTableProps()}>
@@ -73,6 +73,6 @@ export const FilteringTable = () => {
 					))}
 				</tfoot>
 			</table>
-		</>
+		</div>
 	)
 }
