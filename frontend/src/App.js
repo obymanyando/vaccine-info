@@ -6,7 +6,7 @@ import { Pagination } from './components/Pagination'
 import { SortingTable } from './components/SortingTable'
 import { VaccinationsTable } from './components/VaccinationsTable'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Orders from './pages/Orders'
+import Suppliers from './pages/Suppliers'
 import Antiqua from './pages/Antiqua'
 import SolarBuddhica from './pages/SolarBuddhica'
 import Zerpfy from './pages/Zerpfy'
@@ -14,30 +14,21 @@ import MainNav from './layouts/MainNav'
 
 function App() {
 	return (
-		<div className='App'>
+		<div>
 			<MainNav />
+			<Switch>
+				<Route path={'/'} exact>
+					<VaccinationsTable />
+				</Route>
+				<Route path={'/suppliers'} exact>
+					<Suppliers />
+				</Route>
+			</Switch>
+
 			<header className='App-header'>
 				<h1>THL VACCINE TRACKING SYSTEM</h1>
 			</header>
-			<hr />
-			<Switch>
-				<Route path={('/', '/pagination')} exact>
-					<Pagination />
-				</Route>
-				<Route path={'/orders'}>
-					<Orders />
-				</Route>
-				<Route path={'/antiqua'}>
-					<Antiqua />
-				</Route>
-				<Route path={'/solar-buddhica'}>
-					<SolarBuddhica />
-				</Route>
-				<Route path={'/zerpfy'}>
-					<Zerpfy />
-				</Route>
-			</Switch>
-			{/* <VaccinationsTable /> */}
+			<Pagination />
 		</div>
 	)
 }
