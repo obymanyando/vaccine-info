@@ -23,7 +23,7 @@ export const VaccinationsTable = () => {
 
 	return (
 		<div>
-			<h3>Current Vaccination status</h3>
+			<h3>Current Vaccinations status</h3>
 			<table {...getTableProps()}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
