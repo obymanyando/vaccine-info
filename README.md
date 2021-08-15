@@ -4,6 +4,10 @@ A vaccine tracking app for the Solita Academy 2021 exercise.
 ## Technologies used:
 
 - MERN-stack
+
+### Hosted on Mongo Realm
+
+[Demo](https://solita-app-chdlp.mongodbstitch.com/)
 _____________________________________________________
 
 ## To use:
