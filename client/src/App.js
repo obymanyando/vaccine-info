@@ -1,17 +1,17 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import './App.css'
-import { FilteringTable } from './components/FilteringTable'
-import { Pagination } from './components/Pagination'
-import { SortingTable } from './components/SortingTable'
-import { VaccinationsTable } from './components/VaccinationsTable'
+// import { FilteringTable } from './components/FilteringTable'
+// import { Pagination } from './components/Pagination'
+// import { SortingTable } from './components/SortingTable'
+// import { VaccinationsTable } from './components/VaccinationsTable'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Suppliers from './pages/Suppliers'
 import Antiqua from './pages/Antiqua'
 import SolarBuddhica from './pages/SolarBuddhica'
 import Zerpfy from './pages/Zerpfy'
 import MainNav from './layouts/MainNav'
 import Dashboard from './components/Dashboard'
+import VacsTable from './pages/VacsTable'
 
 function App() {
 	return (
@@ -26,6 +26,9 @@ function App() {
 					{/* <VaccinationsTable /> */}
 					<Dashboard />
 				</Route>
+				<Route path={'/vacs-table'} exact>
+					<VacsTable />
+				</Route>
 				<Route path={'/antiqua'} exact>
 					<Antiqua />
 				</Route>
@@ -35,7 +38,6 @@ function App() {
 				<Route path={'/zerpfy'} exact>
 					<Zerpfy />
 				</Route>
-				<Route path={'/suppliers'} exact></Route>
 			</Switch>
 		</div>
 	)

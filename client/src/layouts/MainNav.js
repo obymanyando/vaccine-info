@@ -28,6 +28,11 @@ const MainNav = () => {
 								</a>
 							</li>
 							<li className='nav-item'>
+								<Link to={'/vacs-table'} className='nav-link'>
+									Vaccinations Table
+								</Link>
+							</li>
+							<li className='nav-item'>
 								<Link to={'/antiqua'} className='nav-link'>
 									Antiqua
 								</Link>
