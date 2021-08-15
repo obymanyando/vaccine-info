@@ -11,24 +11,32 @@ import Antiqua from './pages/Antiqua'
 import SolarBuddhica from './pages/SolarBuddhica'
 import Zerpfy from './pages/Zerpfy'
 import MainNav from './layouts/MainNav'
+import Dashboard from './components/Dashboard'
 
 function App() {
 	return (
 		<div>
 			<MainNav />
-			<Switch>
-				<Route path={'/'} exact>
-					<VaccinationsTable />
-				</Route>
-				<Route path={'/suppliers'} exact>
-					<Suppliers />
-				</Route>
-			</Switch>
-
 			<header className='App-header'>
 				<h1>THL VACCINE TRACKING SYSTEM</h1>
 			</header>
-			<Pagination />
+			<hr />
+			<Switch>
+				<Route path={'/'} exact>
+					{/* <VaccinationsTable /> */}
+					<Dashboard />
+				</Route>
+				<Route path={'/antiqua'} exact>
+					<Antiqua />
+				</Route>
+				<Route path={'/solar-buddhica'} exact>
+					<SolarBuddhica />
+				</Route>
+				<Route path={'/zerpfy'} exact>
+					<Zerpfy />
+				</Route>
+				<Route path={'/suppliers'} exact></Route>
+			</Switch>
 		</div>
 	)
 }

@@ -58,7 +58,7 @@ export default class VaccinationsDAO {
 			}
 		} catch (e) {
 			console.error(
-				`Unable to covnert cursor to array or problem counting documents, ${e} `,
+				`Unable to convert cursor to array or problem counting documents, ${e} `,
 			)
 			return { vaccinationsList: [], totalNumVaccinations: 0 }
 		}

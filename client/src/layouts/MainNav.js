@@ -23,41 +23,24 @@ const MainNav = () => {
 					<div className='collapse navbar-collapse' id='navbarSupportedContent'>
 						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
 							<li className='nav-item'>
-								<a className='nav-link active' aria-current='page' href='#'>
-									Home
+								<a className='nav-link active' aria-current='page' href='/'>
+									Dashboard
 								</a>
 							</li>
 							<li className='nav-item'>
 								<Link to={'/antiqua'} className='nav-link'>
-									ANTIQUA
+									Antiqua
 								</Link>
 							</li>
-							<li className='nav-item dropdown'>
-								<Link
-									className='nav-link dropdown-toggle'
-									id='navbarDropdown'
-									role='button'
-									data-bs-toggle='dropdown'
-									aria-expanded='false'>
-									Suppliers
+							<li className='nav-item'>
+								<Link to={'/solar-buddhica'} className='nav-link'>
+									Solar Buddhica
 								</Link>
-								<ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
-									<li>
-										<Link to={'antiqua'} className='dropdown-item'>
-											Antiqua
-										</Link>
-									</li>
-									<li>
-										<Link to={'/solar-budhica'} className='dropdown-item'>
-											Solar Buddhica
-										</Link>
-									</li>
-									<li>
-										<Link to={'/zerpfy'} className='dropdown-item'>
-											Zerpfy
-										</Link>
-									</li>
-								</ul>
+							</li>
+							<li className='nav-item'>
+								<Link to={'/zerpfy'} className='nav-link'>
+									Zerpfy
+								</Link>
 							</li>
 						</ul>
 					</div>

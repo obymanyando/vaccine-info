@@ -5,7 +5,7 @@ import VACCINATION_DATA from '../data/vaccinations.json'
 import { COLUMNS } from './columns'
 import './vaccinationTable.css'
 
-export const Pagination = () => {
+const Pagination = () => {
 	//we use the useMemo hook below to tell react not to re-create all the data on every render.
 	const columns = useMemo(() => COLUMNS, [])
 	const data = useMemo(() => VACCINATION_DATA, [])
@@ -107,3 +107,5 @@ export const Pagination = () => {
 		</div>
 	)
 }
+
+export default Pagination

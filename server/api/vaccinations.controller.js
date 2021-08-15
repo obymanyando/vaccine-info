@@ -5,6 +5,7 @@ export default class VaccinationsController {
 		const vaccinationsPerPage = req.query.vaccinationsPerPage
 			? parseInt(req.query.vaccinationsPerPage, 10)
 			: 20
+
 		const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
 		let filters = {}
@@ -16,7 +17,7 @@ export default class VaccinationsController {
 
 		const { vaccinationsList, totalNumVaccinations } =
 			await VaccinationsDAO.getVaccinations({
-				filters,
+				// filters,
 				page,
 				vaccinationsPerPage,
 			})
