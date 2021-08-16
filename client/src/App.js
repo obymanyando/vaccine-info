@@ -17,28 +17,30 @@ function App() {
 	return (
 		<div>
 			<MainNav />
-			<header className='App-header'>
-				<h1>THL VACCINE TRACKING SYSTEM</h1>
-			</header>
-			<hr />
-			<Switch>
-				<Route path={'/'} exact>
-					{/* <VaccinationsTable /> */}
-					<Dashboard />
-				</Route>
-				<Route path={'/vacs-table'} exact>
-					<VacsTable />
-				</Route>
-				<Route path={'/antiqua'} exact>
-					<Antiqua />
-				</Route>
-				<Route path={'/solar-buddhica'} exact>
-					<SolarBuddhica />
-				</Route>
-				<Route path={'/zerpfy'} exact>
-					<Zerpfy />
-				</Route>
-			</Switch>
+			<div className='App'>
+				<header className='App-header'>
+					<h1>THL VACCINE TRACKING SYSTEM</h1>
+				</header>
+				<hr />
+				<Switch>
+					<Route path={'/'} exact>
+						{/* <VaccinationsTable /> */}
+						<Dashboard />
+					</Route>
+					<Route path={'/vacs-table'} exact>
+						<VacsTable />
+					</Route>
+					<Route path={'/antiqua'} exact>
+						<Antiqua />
+					</Route>
+					<Route path={'/solar-buddhica'} exact>
+						<SolarBuddhica />
+					</Route>
+					<Route path={'/zerpfy'} exact>
+						<Zerpfy />
+					</Route>
+				</Switch>
+			</div>
 		</div>
 	)
 }

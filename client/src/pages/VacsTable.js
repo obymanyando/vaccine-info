@@ -1,14 +1,48 @@
 import React from 'react'
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useTable, usePagination } from 'react-table'
 import VACCINATION_DATA from '../data/vaccinations.json'
 import { COLUMNS } from '../components/columns'
 import '../components/vaccinationTable.css'
+import vaccine from '../services/vaccine'
+import VaccineDataService from '../services/vaccine'
 
 const VacsTable = () => {
+	const [vaccines, setVaccines] = useState([])
 	//we use the useMemo hook below to tell react not to re-create all the data on every render.
+
+	const getVaccines = useEffect(() => {
+		getVaccinations()
+		// getOrders()
+	}, [])
+
+	const getVaccinations = () => {
+		VaccineDataService.getAll()
+			.then((res) => {
+				console.log(res.data.vaccinations)
+				const converted = Object.values(res.data.vaccinations)
+				const convertCopy = { ...converted }
+
+				console.log(converted)
+				console.log(convertCopy)
+				// for (const key in res.data) {
+				// 	const vaccine = {
+				// 		id: key,
+				// 		...res.data[key],
+				// 	}
+				// 	vaccines.push(vaccine)
+				// }
+				setVaccines(converted)
+				console.log(vaccines)
+			})
+			.catch((e) => {
+				console.log(e)
+			})
+	}
+
 	const columns = useMemo(() => COLUMNS, [])
-	const data = useMemo(() => VACCINATION_DATA, [])
+	const data = useMemo(() => getVaccines, [])
+	console.log(getVaccines)
 
 	const {
 		getTableProps,
