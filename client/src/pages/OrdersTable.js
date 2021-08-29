@@ -1,30 +1,29 @@
 import React from 'react'
 import { useMemo, useState, useEffect } from 'react'
-import { useTable, usePagination } from 'react-table'
-// import VACCINATION_DATA from '../data/vaccinations.json'
-import { COLUMNS } from '../components/columns'
+// import { useTable, usePagination } from 'react-table'
+// import VACCINATION_DATA from '../data/orders.json'
+// import { COLUMNS } from '../components/columns'
 import '../components/vaccinationTable.css'
-// import vaccine from '../services/vaccine'
-import VaccineDataService from '../services/vaccine'
+import OrdersDataService from '../services/orders'
 
-const VacsTable = () => {
-	const [vaccines, setVaccines] = useState([])
+const OrdersTable = () => {
+	const [orders, setOrders] = useState([])
 	//we use the useMemo hook below to tell react not to re-create all the data on every render.
 
-	const getVaccines = useEffect(() => {
-		getVaccinations()
-		// getOrders()
+	const getOrders = useEffect(() => {
+		getOrdersList()
 	}, [])
 
-	const getVaccinations = () => {
-		VaccineDataService.getAll()
+	const getOrdersList = () => {
+		OrdersDataService.getAll()
 			.then((res) => {
-				console.log(res.data.vaccinations)
-				const converted = Object.values(res.data.vaccinations)
-				const convertCopy = { ...converted }
+				console.log(res.data.orders)
+				let orders = res.data.orders
+				// const converted = Object.values(res.data.orders)
+				// const convertCopy = { ...converted }
 
-				console.log(converted)
-				console.log(convertCopy)
+				// console.log(converted)
+				// console.log(convertCopy)
 				// for (const key in res.data) {
 				// 	const vaccine = {
 				// 		id: key,
@@ -32,17 +31,32 @@ const VacsTable = () => {
 				// 	}
 				// 	vaccines.push(vaccine)
 				// }
-				setVaccines(converted)
-				console.log(vaccines)
+				setOrders(orders)
+				console.log(orders)
 			})
 			.catch((e) => {
 				console.log(e)
 			})
 	}
+	const orderList = orders.map((order) => {
+		return (
+			<ul>
+				<li>{order.responsiblePerson}</li>
+			</ul>
+		)
+	})
+	console.log(getOrders)
+	return (
+		<div>
+			<h1>Orders Page</h1>
+			{orderList}
+		</div>
+	)
 
+	/*
 	const columns = useMemo(() => COLUMNS, [])
-	const data = useMemo(() => getVaccines, [])
-	console.log(getVaccines)
+	const data = useMemo(() => getOrders, [])
+	
 
 	const {
 		getTableProps,
@@ -140,6 +154,7 @@ const VacsTable = () => {
 			</div>
 		</div>
 	)
+    */
 }
 
-export default VacsTable
+export default OrdersTable

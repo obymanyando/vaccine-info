@@ -1,8 +1,8 @@
-import http from '../http-common'
+import { vaccineURL } from '../http-common'
 
 class VaccineDataService {
 	getAll(page = 0) {
-		return http.get()
+		return vaccineURL.get()
 	}
 }
 

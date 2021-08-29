@@ -12,6 +12,7 @@ import Zerpfy from './pages/Zerpfy'
 import MainNav from './layouts/MainNav'
 import Dashboard from './components/Dashboard'
 import VacsTable from './pages/VacsTable'
+import OrdersTable from './pages/OrdersTable'
 
 function App() {
 	return (
@@ -23,9 +24,12 @@ function App() {
 				</header>
 				<hr />
 				<Switch>
-					<Route path={'/'} exact>
-						{/* <VaccinationsTable /> */}
+					{/* <Route path={'/'} exact>
+						
 						<Dashboard />
+					</Route> */}
+					<Route path={'/'} exact>
+						<OrdersTable />
 					</Route>
 					<Route path={'/vacs-table'} exact>
 						<VacsTable />
